@@ -117,6 +117,10 @@ function changeSound(sound) {
     music.stop()
     mute = true
     music.src = 'mp3/' + sound + '.mp3'
+
+    document.getElementById("play").classList.add("is-link")
+      document.getElementById("play").classList.remove("is-success")
+      document.getElementById("play").innerHTML = '<span class="icon is-small"><i class="fas fa-play"></i></span>'
 }
 </script>
 </body>
