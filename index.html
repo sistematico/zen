@@ -50,7 +50,7 @@
             <h1 class="title">Zen</h1>
             <p class="subtitle"></p>
 
-            <video id="player" playsinline controls loop data-poster="/path/to/poster.jpg">
+            <video id="player" playsinline controls data-poster="/path/to/poster.jpg">
                 <source src="mp4/rain.mp4" type="video/mp4" />
             </video>
         </div>
@@ -58,8 +58,28 @@
 <script src="js/navbar.js"></script>
 <script src="js/plyr.min.js"></script>
 <script>
-  const player = new Plyr('#player');
+const player = new Plyr('#player');
+
+player.on('timeupdate', event => {
+    //const instance = event.detail.plyr;
+
+    var buffer = .44
+    if(this.currentTime > this.duration - buffer){
+        this.currentTime = 0
+        this.play()
+    }
+});
+
+  //     var audio_file = new Audio('whatever.mp3')
+// audio_file.addEventListener('timeupdate', function(){
+//     var buffer = .44
+//     if(this.currentTime > this.duration - buffer){
+//         this.currentTime = 0
+//         this.play()
+//     }
+// });
+
 </script>
-<script src="js/script.js"></script>
+<!-- <script src="js/script.js"></script> -->
 </body>
 </html>
