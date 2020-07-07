@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zen</title>        
+    <meta property="og:title" content="Zen" />
+    <meta property="og:description" content="Fique Zen!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://zen.lucasbrum.net" />
+    <meta property="og:image" content="img/logo.png" />
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/"><img src="img/logo-navbar.png" width="112" height="28"></a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarDefault">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarDefault" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item">Início</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">Temas</a>
+                    <div class="navbar-dropdown">
+                        <a href="#mar" class="navbar-item">Mar</a>
+                        <a href="#chuva" class="navbar-item">Chuva</a>
+                        <a href="#campo" class="navbar-item">Campo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a href="https://github.com/sistematico/zen" class="button is-light">Github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Chuva</h1>
+            <p class="subtitle">relaxe com o som da chuva</p>
+
+            <div class="buttons">
+                <button id="play" class="button is-primary">
+                    <span class="icon is-small">
+                        <i class="fas fa-play"></i>
+                    </span>
+                </button>
+            </div>
+
+            <figure class="image is-16by9">
+                <img src="img/poster/rain.jpg">
+            </figure>
+        </div>
+
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>Site feito por Lucas Saliés Brum.</p>
+        </div>
+    </footer>
+<script src="js/navbar.js"></script>
+<script src="js/howler.min.js"></script>
+<script>
+var music = new Howl({
+    src: ['mp3/rain.mp3'],
+    autoplay: false,
+    buffer: false,
+    loop: true
+});
+var mute = false;
+
+document.getElementById("play").onclick = function () {
+    if (mute === true) {
+      music.play();
+      mute = false;
+      document.getElementById("play").classList.add("is-success")
+      document.getElementById("play").classList.remove("is-link")
+      document.getElementById("play").innerHTML = '<span class="icon is-small"><i class="fas fa-pause"></i></span>'
+    } else {
+      music.pause();
+      mute = true;
+      document.getElementById("play").classList.add("is-link")
+      document.getElementById("play").classList.remove("is-success")
+      document.getElementById("play").innerHTML = '<span class="icon is-small"><i class="fas fa-play"></i></span>'
+    }
+};
+
+var elements = document.querySelectorAll('nav a');
+for (var i=0; i<elements.length; i++) {
+    elements[i].onclick = function(){
+        if(window.location.hash) {
+            alert(window.location.hash.substr(1))
+        } 
+    };
+}
+</script>
+</body>
+</html>
