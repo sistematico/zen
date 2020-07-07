@@ -49,7 +49,6 @@
         <div class="container">
             <h1 class="title">Chuva</h1>
             <p class="subtitle">relaxe com o som da chuva</p>
-
             <video id="player" playsinline controls data-poster="img/poster/rain.jpg">
                 <source src="webm/rain.webm" type="video/webm" />
                 <source src="mp4/rain.mp4" type="video/mp4" />
@@ -64,25 +63,13 @@ const player = new Plyr('#player', {
 });
 
 player.on('timeupdate', event => {
-    //const instance = event.detail.plyr;
-    console.log(player.duration, player.currentTime)
-
-    let buffer = .48
+    //let buffer = .44
+    let buffer = .52
     if(player.currentTime > player.duration - buffer) {
-        console.log("Loop")
         player.currentTime = 0
         player.play()
     }
 });
-
-//     var audio_file = new Audio('whatever.mp3')
-// audio_file.addEventListener('timeupdate', function(){
-//     var buffer = .44
-//     if(this.currentTime > this.duration - buffer){
-//         this.currentTime = 0
-//         this.play()
-//     }
-// });
 </script>
 </body>
 </html>
