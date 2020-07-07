@@ -11,6 +11,7 @@
     <meta property="og:image" content="img/logo.png" />
     <link rel="stylesheet" href="css/plyr.css" />
     <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <body>
@@ -61,7 +62,6 @@
 const player = new Plyr('#player', {
     iconUrl: '/css/plyr.svg'
 });
-
 player.on('timeupdate', event => {
     //let buffer = .44
     let buffer = .39
