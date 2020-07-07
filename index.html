@@ -67,7 +67,9 @@ const player = new Plyr('#player', {
 player.on('timeupdate', event => {
     //const instance = event.detail.plyr;
 
-    var buffer = .44
+    console.log(player.duration, player.currentTime)
+
+    let buffer = .44
     if(player.currentTime > player.duration - buffer){
         player.currentTime = 0
         player.play()
