@@ -58,15 +58,12 @@
 <script src="js/navbar.js"></script>
 <script src="js/plyr.min.js"></script>
 <script>
-//const player = new Plyr('#player');
-
 const player = new Plyr('#player', {
     iconUrl: '/css/plyr.svg'
 });
 
 player.on('timeupdate', event => {
     //const instance = event.detail.plyr;
-
     console.log(player.duration, player.currentTime)
 
     let buffer = .44
@@ -76,7 +73,7 @@ player.on('timeupdate', event => {
     }
 });
 
-  //     var audio_file = new Audio('whatever.mp3')
+//     var audio_file = new Audio('whatever.mp3')
 // audio_file.addEventListener('timeupdate', function(){
 //     var buffer = .44
 //     if(this.currentTime > this.duration - buffer){
@@ -84,8 +81,6 @@ player.on('timeupdate', event => {
 //         this.play()
 //     }
 // });
-
 </script>
-<!-- <script src="js/script.js"></script> -->
 </body>
 </html>
