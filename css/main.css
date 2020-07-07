@@ -1,5 +1,7 @@
 video, .plyr__poster {
     object-fit: cover;
+    /* background-size: ; */
+    background-size: cover;
     /* object-fit: fill; */
     /* object-fit: inherit; */
     /* object-position: 0 -14px; */
