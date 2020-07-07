@@ -72,7 +72,7 @@ const player = new Plyr('#player', {
     iconUrl: '/css/plyr.svg'
 });
 player.on('timeupdate', event => {
-    let buffer = .98
+    let buffer = .97
     if(player.currentTime > player.duration - buffer) {
         player.currentTime = 0
         player.play()
