@@ -64,9 +64,9 @@ player.on('timeupdate', event => {
     //const instance = event.detail.plyr;
 
     var buffer = .44
-    if(this.currentTime > this.duration - buffer){
-        this.currentTime = 0
-        this.play()
+    if(player.currentTime > player.duration - buffer){
+        player.currentTime = 0
+        player.play()
     }
 });
 
