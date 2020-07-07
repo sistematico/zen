@@ -50,15 +50,8 @@
         <div class="container">
             <h1 class="title">Chuva</h1>
             <p class="subtitle">relaxe com o som da chuva</p>
-            <!-- <video id="videoplayer" playsinline controls data-poster="img/poster/rain.jpg">
-                <source src="webm/rain.webm" type="video/webm" />
-                <source src="mp4/rain.mp4" type="video/mp4" />
-            </video> -->
 
-            <audio id="player" controls>
-                <source src="mp3/rain.mp3" type="audio/mp3" />
-                <!-- <source src="/path/to/audio.ogg" type="audio/ogg" /> -->
-            </audio>
+
 
             <figure class="image is-16by9">
                 <img src="img/poster/rain.jpg">
@@ -66,18 +59,25 @@
         </div>
     </section>
 <script src="js/navbar.js"></script>
-<script src="js/plyr.min.js"></script>
+<script src="js/howler.min.js"></script>
 <script>
-const player = new Plyr('#player', {
-    iconUrl: '/css/plyr.svg'
+var music = new Howl({
+    urls: ['mp3/rain.mp3'],
+    autoplay: false,
+    loop: true
 });
-player.on('timeupdate', event => {
-    let buffer = .92
-    if(player.currentTime > player.duration - buffer) {
-        player.currentTime = 0
-        player.play()
+var mute = false;
+
+document.getElementById("play").onclick = function () {
+    if (mute === true) {
+      music.play();
+      mute = false;
+    } else {
+      music.pause();
+      mute = true;
     }
-});
+};
+
 </script>
 </body>
 </html>
