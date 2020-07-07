@@ -74,9 +74,11 @@ document.getElementById("play").onclick = function () {
     if (mute === true) {
       music.play();
       mute = false;
+      document.getElementById("play").innerHTML = "Pause"
     } else {
       music.pause();
       mute = true;
+      document.getElementById("play").innerHTML = "Play"
     }
 };
 
