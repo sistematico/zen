@@ -58,7 +58,11 @@
 <script src="js/navbar.js"></script>
 <script src="js/plyr.min.js"></script>
 <script>
-const player = new Plyr('#player');
+//const player = new Plyr('#player');
+
+const player = new Plyr('#player', {
+    iconUrl: 'css/plyr.svg'
+});
 
 player.on('timeupdate', event => {
     //const instance = event.detail.plyr;
