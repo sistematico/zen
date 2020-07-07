@@ -106,9 +106,10 @@ document.getElementById("play").onclick = function () {
 //     };
 // }
 
-window.addEventListener('hashchange', function() {
-  //console.log('The hash has changed!')
-  alert(window.location.hash.substr(1))
+window.addEventListener('hashchange', function(e) {
+    alert(e)  
+    //console.log('The hash has changed!')
+    //alert(window.location.hash.substr(1))
 }, false);
 </script>
 </body>
