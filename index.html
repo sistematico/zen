@@ -66,8 +66,9 @@ player.on('timeupdate', event => {
     //const instance = event.detail.plyr;
     console.log(player.duration, player.currentTime)
 
-    let buffer = .44
-    if(player.currentTime > player.duration - buffer){
+    let buffer = .48
+    if(player.currentTime > player.duration - buffer) {
+        console.log("Loop")
         player.currentTime = 0
         player.play()
     }
