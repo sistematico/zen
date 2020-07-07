@@ -78,10 +78,14 @@ document.getElementById("play").onclick = function () {
     if (mute === true) {
       music.play();
       mute = false;
+      document.getElementById("play").classList.add("is-success")
+      document.getElementById("play").classList.remove("is-link")
       document.getElementById("play").innerHTML = '<span class="icon is-small"><i class="fas fa-pause"></i></span>'
     } else {
       music.pause();
       mute = true;
+      document.getElementById("play").classList.add("is-link")
+      document.getElementById("play").classList.remove("is-success")
       document.getElementById("play").innerHTML = '<span class="icon is-small"><i class="fas fa-play"></i></span>'
     }
 };
