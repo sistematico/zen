@@ -1,6 +1,6 @@
-video {
-    /* object-fit: cover; */
-    object-fit: fill;
+video, .plyr__poster {
+    object-fit: cover;
+    /* object-fit: fill; */
     /* object-fit: inherit; */
-    object-position: 0 -14px; /* to center our image*/
+    /* object-position: 0 -14px; */
 }
